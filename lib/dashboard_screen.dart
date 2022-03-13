@@ -19,9 +19,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: WillPopScope(
-        onWillPop: (){
+        onWillPop: () {
           setState(() {
-            firstView=true;
+            firstView = true;
           });
           return;
         },
@@ -45,7 +45,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               children: [
                 Image.asset(
                   'assets/images/home.png',
-                  color: Color(0xff666666),
+                  color: Colors.black.withOpacity(0.62),
                   height: 16,
                 ),
                 Image.asset(
@@ -85,7 +85,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               height: 10,
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(right: 20, left: 20),
+                              padding:
+                                  const EdgeInsets.only(right: 20, left: 20),
                               child: Stack(
                                 children: [
                                   Row(
@@ -231,7 +232,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 height: 20,
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: [
@@ -252,7 +254,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     ],
                                   ),
                                   RichText(
-
                                     text: const TextSpan(
                                       text: '\$ ',
                                       style: TextStyle(
@@ -267,14 +268,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                               fontSize: 17,
                                               fontWeight: FontWeight.w500),
                                         ),
-
                                         TextSpan(
                                           text: '00',
                                           style: TextStyle(
-
                                               color: Colors.grey,
                                               fontSize: 14,
-                                              fontFeatures:    [FontFeature.superscripts()],
+                                              fontFeatures: [
+                                                FontFeature.superscripts()
+                                              ],
                                               fontWeight: FontWeight.w500),
                                         ),
                                       ],
@@ -283,15 +284,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 ],
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: const [
                                   Text(
                                     '. 2121',
                                     style: TextStyle(
-                                      color: Colors.black,
-                                        fontStyle: FontStyle.italic
-
-                                    ),
+                                        color: Colors.black,
+                                        fontStyle: FontStyle.italic),
                                   ),
                                   Text(
                                     'Saldo Disponible',
@@ -309,7 +309,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 height: 10,
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: [
@@ -360,15 +361,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 ],
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: const [
                                   Text(
                                     '. 2121',
                                     style: TextStyle(
-                                      color: Colors.black,
-                                        fontStyle: FontStyle.italic
-
-                                    ),
+                                        color: Colors.black,
+                                        fontStyle: FontStyle.italic),
                                   ),
                                   Text(
                                     'Saldo Disponible',
@@ -407,13 +407,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 child: Container(
                                   padding: EdgeInsets.only(left: 10, right: 10),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       SizedBox(
                                         height: 5,
                                       ),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
                                         children: [
                                           Icon(
                                             Icons.clear,
@@ -453,7 +455,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             margin: const EdgeInsets.symmetric(horizontal: 10),
                             padding: EdgeInsets.all(12),
                             color: Colors.white,
-                            height: 220,
                             width: double.infinity,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -468,83 +469,110 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 SizedBox(
                                   height: 20,
                                 ),
-                                Text(
-                                  'Vive BBVA',
-                                  style: TextStyle(
-                                      color: Color(0xff1971B8),
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      firstView = false;
-                                    });
-                                  },
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Image.asset(
-                                        'assets/images/card.png',
-                                        height: 25,
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.end,
-                                        children: [
-                                          RichText(
-                                            text: const TextSpan(
-                                              text: '\$ ',
+                                Material(
+                                  color: Colors.transparent,
+                                  child: InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        firstView = false;
+                                      });
+                                    },
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'Vive BBVA',
                                               style: TextStyle(
-                                                  color: Colors.grey,
-                                                  fontSize: 13,
-                                                  fontWeight: FontWeight.w500),
-                                              children: <TextSpan>[
-                                                TextSpan(
-                                                  text: '0',
-                                                  style: TextStyle(
-                                                      color: Colors.grey,
-                                                      fontSize: 15,
-                                                      fontWeight:
-                                                          FontWeight.w500),
+                                                  color: Color(0xff1971B8),
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            Icon(Icons.phone_android_outlined),
+                                          ],
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Image.asset(
+                                              'assets/images/card.png',
+                                              height: 25,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                RichText(
+                                                  text: const TextSpan(
+                                                    text: '\$ ',
+                                                    style: TextStyle(
+                                                        color: Colors.grey,
+                                                        fontSize: 17,
+                                                        fontFeatures: [
+                                                          FontFeature
+                                                              .subscripts()
+                                                        ],
+                                                        fontWeight: FontWeight.normal),
+                                                    children: <TextSpan>[
+                                                      TextSpan(
+                                                        text: '3,998',
+                                                        style: TextStyle(
+                                                          color: Colors.black,
+                                                          fontSize: 20,
+                                                          fontWeight: FontWeight.normal
+                                                        ),
+                                                      ),
+                                                      TextSpan(
+                                                        text: ' 03',
+                                                        style: TextStyle(
+                                                            color: Colors.grey,
+                                                            fontSize: 15,
+                                                            fontFeatures: [
+                                                              FontFeature
+                                                                  .superscripts()
+                                                            ],
+                                                            fontWeight: FontWeight.normal),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 ),
-                                                TextSpan(
-                                                  text: '00',
+                                                Text(
+                                                  'Saldo Utilizado',
                                                   style: TextStyle(
-                                                      color: Colors.grey,
-                                                      fontSize: 15,
-                                                      fontFeatures:    [FontFeature.superscripts()],
-                                                      fontWeight:
-                                                          FontWeight.w500),
+                                                    color: Colors.grey,
+                                                  ),
                                                 ),
                                               ],
                                             ),
-                                          ),
-                                          Text(
-                                            'Saldo Utilizado',
-                                            style: TextStyle(
-                                              color: Colors.grey,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                          ],
+                                        ),
+                                        Text(
+                                          '. 2121',
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontStyle: FontStyle.italic),
+                                        ),
+                                        Divider(),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                                Text(
-                                  '. 2121',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                      fontStyle: FontStyle.italic
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Vive BBVA',
+                                      style: TextStyle(
+                                          color: Color(0xff1971B8),
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Icon(Icons.phone_android_outlined),
 
-                                  ),
-                                ),
-                                Divider(),
-                                Text(
-                                  'Vive BBVA',
-                                  style: TextStyle(
-                                      color: Color(0xff1971B8),
-                                      fontWeight: FontWeight.bold),
+                                  ],
                                 ),
                                 Row(
                                   mainAxisAlignment:
@@ -555,30 +583,39 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                       height: 25,
                                     ),
                                     Column(
-                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
                                       children: [
                                         RichText(
                                           text: const TextSpan(
                                             text: '\$ ',
                                             style: TextStyle(
                                                 color: Colors.grey,
-                                                fontSize: 13,
-                                                fontWeight: FontWeight.w500),
+                                                fontSize: 17,
+                                                fontFeatures: [
+                                                  FontFeature
+                                                      .subscripts()
+                                                ],
+                                                fontWeight: FontWeight.normal),
                                             children: <TextSpan>[
                                               TextSpan(
-                                                text: '0',
+                                                text: '3,998',
                                                 style: TextStyle(
-                                                    color: Colors.grey,
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w500),
+                                                    color: Colors.black,
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.normal
+                                                ),
                                               ),
                                               TextSpan(
-                                                text: '00',
+                                                text: ' 03',
                                                 style: TextStyle(
                                                     color: Colors.grey,
                                                     fontSize: 15,
-                                                    fontFeatures:    [FontFeature.superscripts()],
-                                                    fontWeight: FontWeight.w500),
+                                                    fontFeatures: [
+                                                      FontFeature
+                                                          .superscripts()
+                                                    ],
+                                                    fontWeight: FontWeight.normal),
                                               ),
                                             ],
                                           ),
@@ -596,9 +633,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 Text(
                                   '. 2121',
                                   style: TextStyle(
-                                    color: Colors.black,
-                                    fontStyle: FontStyle.italic
-                                  ),
+                                      color: Colors.black,
+                                      fontStyle: FontStyle.italic),
                                 ),
                               ],
                             ),
@@ -643,7 +679,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             height: 10,
           ),
           InkWell(
-            onTap: (){
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => CardDetailsScreen()),

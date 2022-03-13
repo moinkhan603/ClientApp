@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
+import 'detail_screen.dart';
+
 class ListDetailsScreen extends StatefulWidget {
   @override
   _ListDetailsScreenState createState() => _ListDetailsScreenState();
@@ -208,38 +210,47 @@ class _ListDetailsScreenState extends State<ListDetailsScreen> {
                   SizedBox(
                     height: 5,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Deposito efectivo practic',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color(0xff237BB9),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
-                      RichText(
-                        text: TextSpan(
-                          text: '\$ ',
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DetailsScreen()),
+                      );
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Deposito efectivo practic',
+                          textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 10,
-                              fontFeatures: [FontFeature.subscripts()],
-                              fontWeight: FontWeight.w500),
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: '400.00',
-                              style: TextStyle(
-                                  color: Colors.black.withOpacity(0.5),
-                                  fontSize: 32,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                          ],
+                              color: Color(0xff237BB9),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
                         ),
-                      ),
-                    ],
+                        RichText(
+                          text: TextSpan(
+                            text: '\$ ',
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 10,
+                                fontFeatures: [FontFeature.subscripts()],
+                                fontWeight: FontWeight.w500),
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: '400.00',
+                                style: TextStyle(
+                                    color: Colors.black.withOpacity(0.5),
+                                    fontSize: 32,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 5,
