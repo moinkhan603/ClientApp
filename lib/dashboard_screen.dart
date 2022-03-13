@@ -70,6 +70,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           body: Stack(
             children: [
               SingleChildScrollView(
+                physics: NeverScrollableScrollPhysics(),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
@@ -655,6 +656,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   'assets/images/card.png',
                   height: 25,
                 ),
+                Icon(Icons.phone_android_outlined)
               ],
             ),
           ),
